@@ -1,0 +1,69 @@
+
+
+.navbar{
+    width: 100%;
+padding: 1rem;
+background: rgb(178, 211, 236);
+
+}
+
+.navbar .nav{
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar .nav input{
+    width: 375px;
+    border-radius: 15px;
+    border: none;
+    font-size: 15px;
+    padding: 1rem;
+}
+.navbar .nav input:focus{
+    outline: none;
+}
+
+.navbar .nav button{
+    color: black;
+    background: whitesmoke;
+    border-radius: 15px;
+    border: none;
+    font-size: 15px;
+    padding: 1rem;
+}
+
+.navbar .nav button:hover{
+    color: white;
+    background: rgb(82, 163, 225);
+    transition: 0.2s;
+}
+.body-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.upperbox, .lowerbox{
+    max-width: 1040px;    
+    width: 100%;
+    padding: 1rem;
+    background: rgb(154, 174, 204);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.upperbox .box1, .lowerbox .box2{
+    border: 1px solid white;
+    width: 160px;
+    height: 250px;
+    padding: 0.5rem;
+    margin: auto;
+}
+
+#map { height: 180px; 
+width: 600px;}

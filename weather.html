@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+
+    <link rel="stylesheet" href="weather.css">
+
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+          
+            <input type="text" placeholder="Enter Location ..." id="location-input" spellcheck="false"/>
+            <button type="submit" id="submit-btn"><img src="images/search.png" alt=""></button>
+        </div>
+        <div class="weather">
+            
+            <div class="main-temp">
+                
+                <div class="temprature">
+                    <h1>Weather of <span id="initial-place"></span></h1>
+                    <i class="fi fi-rr-sun"></i>
+                    <h1 class="temp" id="temp">22°C </h1>
+                    <h2 class="city"><span  id="location"></span></h2>
+                </div>
+                <div id="map"></div>
+            </div>
+        
+        <div class="details">
+            <div>
+                <div class="col">
+                    <i class="fi fi-rr-temperature-high"></i>
+                    <div>
+                        <p class="max-temp"><span id="max-temp">°C</span></p>
+                        <p>High Temperature</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <i class="fi fi-rr-temperature-down"></i>                     <div>
+                        <p class="min-temp"><span id="min-temp">°C</span></p>
+                        <p>Low Temperature</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="col">
+                    <i class="fi fi-rr-humidity"></i>                    <div>
+                        <p class="humidity"><span id="humidity">%</span></p></p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <i class="fi fi-rr-wind"></i>
+                    <div>
+                        <p class="wind"><span id="wind">km/hr</span></p></p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="col">
+                    <i class="fi fi-rr-sunrise-alt"></i>                    <div>
+                        <p class="sunrise"><span id="sunrise"></span></p></p>
+                        <p>Sunrise</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <i class="fi fi-rr-sunset"></i>
+                    <div>
+                        <p class="sunset"><span id="sunset"></span></p></p>
+                        <p>Sunset</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dv>
+</div>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+    <script src="index.js"></script>
+</body>
+</html>

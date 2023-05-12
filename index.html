@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+</head>
+<body>
+    <div class="navbar">
+        <nav class="nav">
+            <input type="text" placeholder="Enter Location ..." id="location-input"/>
+            <button id="submit-btn">Search</button>
+        </nav>
+    </div>
+    <div class="body-box">
+        <h1>Weather of <span id="location"></span></h1>
+        <div class="upperbox">
+            <div class="box1 temp">"&#8451"<span id="temp"></span></div>
+            <div class="box1 feels-like">Feels-like<span id="feels-like"></span></div>
+            <div class="box1 max-temp">Max-temp<span id="max-temp"></span></div>
+            <div class="box1 min-temp">Min-temp<span id="min-temp"></span></div>
+        </div>
+        <div class="lowerbox">
+            <div class="box2 humidity">Humidity<span id="humidity"></span></div>
+            <div class="box2 sunrise">Sunrise<span id="sunrise"></span></div>
+            <div class="box2 sunset">Sunset<span id="sunset"></span></div>
+            <div class="box2 wind-speed">Wind Speed<span id="wind-speed"></span></div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+    <script src="index.js"></script>
+</body>
+</html>
