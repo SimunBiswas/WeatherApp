@@ -60,7 +60,6 @@ async function getWeather(city) {
     const sunriseT =convertTimeTo12HrFormat(sunrise);
     const sunsetT = convertTimeTo12HrFormat(sunset);
 
-    
     document.getElementById("temp").innerHTML = tempC;
     document.getElementById("max-temp").innerHTML = max_tempC;
     document.getElementById("min-temp").innerHTML = min_tempC;
