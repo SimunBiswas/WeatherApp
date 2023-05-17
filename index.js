@@ -113,7 +113,7 @@ async function getWeather(city) {
     document.getElementById("temp").innerHTML = tempC + "°C";
     document.getElementById("max-temp").innerHTML = max_tempC + "°C";
     document.getElementById("min-temp").innerHTML = min_tempC + "°C";
-    document.getElementById("feels-like").innerHTML = " " + feels_like;
+    document.getElementById("feels-like").innerHTML = " " + feels_like + "°C";
     document.getElementById("description").innerHTML = description ;
     document.getElementById("humidity").innerHTML = humidity;
     document.getElementById("wind").innerHTML = windspeed ;
