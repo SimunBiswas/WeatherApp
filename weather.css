@@ -141,15 +141,20 @@ body i{
     flex-direction: column;
     align-items: center;
     justify-content: center;    
-    max-width: 1140px;
+    max-width: 740px;
        
   }
-    
+  .daily-forecast-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
   .Daily-forecast .heading{
     background: #222;
     opacity: 0.9;
     margin: 1rem;
-    padding: 1rem 4rem;
+    padding: 1rem;
     border: 1px solid #222;
     border-radius: 15px;
   }
@@ -158,10 +163,6 @@ body i{
     word-spacing: 0.5rem;
     letter-spacing: 0.5rem;
   }
-
-  .daily-forecast-container{
-    width: 100%;
-  }
    .Daily-forecast .col{
     display: flex;
     align-items: center;
@@ -169,15 +170,63 @@ body i{
   }
  
   .col .inside-col{
-    width: 100%;
+    width: 90%;
     padding: 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
 
 @media screen and (max-width: 740px) {
+    card{    
+        margin-top: 0;
+        padding: 10px;
+        width: 100%;
+        max-width: 1140px;
+        background: linear-gradient(135deg,  #060047, #B3005E);
+        color: #fff;
+        border-radius: 20px;
+        padding-inline-start: 40px 35px;
+        text-align: center;
+    }
+    
+    .search{
+        padding: 30px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 20px;
+    }
+    
+    .search input{
+        border: 0;
+        outline: 0;
+        background: #ebfffc;
+        color: #555;
+        padding: 10px 25px;
+        height: 60px;
+        border-radius: 30px;
+        flex: 1;
+        margin-right: 16px;
+        font-size: 18px;
+    }
+    
+    .search button{
+        margin: auto;
+        padding: 22px;
+        border: 0;
+        outline: 0;
+        background: #ebfffc;
+        border-radius: 30px;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        position: relative;
+    }
+
+
     .details{
         display: flex;
         flex-direction: column;
