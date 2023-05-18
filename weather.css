@@ -141,7 +141,18 @@ body i{
     justify-content: center;
 
   }
-  .Daily-forecast h3{
+  .Daily-forecast .heading{
+    background: #222;
+    opacity: 0.9;
+    width: 740px;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #222;
+    border-radius: 15px;
+  }
+
+  .Daily-forecast .heading h3{
+    word-spacing: 0.5rem;
     letter-spacing: 0.5rem;
   }
    .Daily-forecast .col{
@@ -153,7 +164,7 @@ body i{
  
   .col .inside-col{
     width: 90%;
-    padding: 10px;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -181,7 +192,6 @@ body i{
     }
     .search button{
         margin: auto;
-        padding: 22px;
         border: 0;
         outline: 0;
         background: #ebfffc;
@@ -193,11 +203,9 @@ body i{
     }
     .search button img{
         position: absolute;
-        top: -5px;
-        left: -10px;
+        top: 10px;
+        left: 10px;
         margin-right: 0;
-        width: 40px;
-        height: 40px;
     }
     .main-temp{
         display: flex;
