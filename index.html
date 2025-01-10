@@ -12,173 +12,109 @@
     <link rel="stylesheet" href="weather.css">
 
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css"/>
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     
 </head>
-<body>
-    <div class="card">
-        <div class="search">
-          
-            <input class="input-value" type="text" placeholder="Enter Location ..." id="location-input" spellcheck="false"/>
-            <button type="submit" id="submit-btn"><img src="images/search.png" alt="search" width="20" height="auto"></button>
-        </div>
-        <div class="weather">
-            
-            <div class="main-temp">
-                
-                <div class="temprature">
-                    <h1>Weather of <span id="initial-place"></span></h1>
-                    <img id="main-icon" src="images/sun.png" width="100" height="auto">
+<body>        
+    <div class="container temprature">
+
+        <div class="left">
+            <form class="search">
+                <input class="input-value" type="text" placeholder="Enter Location ..." id="location-input" spellcheck="false"/>
+                <button type="submit" id="submit-btn"><img src="icons/search.png" alt="search" width="20" height="auto" value="delhi"></button>
+            </form>
+
+            <div class="grid" id="map"></div>
+
+
+            <div class="place_box">
+                <div>
                     <h1 class="temp"><span   id="temp"></span></h1>
-                    <p>Feels like<span id="feels-like"></span></p>
-                    <p><span id="description"></span></p>
+                    <p class="f_Like">Feels like<span id="feels-like"></span></p>
                 </div>
-                <div id="map"></div>
+                <div class="head_h1">
+                    <h1><span id="initial-place"></span></h1>
+                    <p id="currentDay"></p>
+                </div>
+                <div>
+                    <img id="main-icon" src="images/sun.png" width="100" height="auto">
+                </div>
             </div>
-        
-            <div class="details">
-                <div class="inside-details">
-                    <div class="col">
-                        <i class="fi fi-rr-temperature-high" style="padding: 10px"></i>
-                        <div>
-                            <p style="padding-bottom: 10px">Max</p>
-                            <p class="max-temp"><span id="max-temp">°C</span></p>
-                          
-                        </div>
-                    </div>
-                    <div class="col">
-                        <i class="fi fi-rr-temperature-down" style="padding: 10px"></i> 
-                        <div>
-                            <p  style="padding-bottom: 10px">Min</p>
-                            <p class="min-temp"><span id="min-temp">°C</span></p>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="inside-details">
-                    <div class="col">
-                        <img src="images/humidity.png" alt="sun" width="60" height="auto" style="padding: 10px">  
-                        <div>
-                            <p class="humidity"><span id="humidity"></span>%</p>
-                          
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="images/wind.png" alt="sun" width="60" height="auto" style="padding: 10px">
-                        
-                        <div>
-                            <p class="wind"><span id="wind"></span>km/hr</p>                            
-                        </div>
-                    </div>
-                </div>
-                <div class="inside-details">
-                    <div class="col">
-                        <img src="images/sunrise.png" alt="sunrise" width="60" height="auto" style="padding: 10px">
-                        <div>
-                            <p class="sunrise"><span id="sunrise"></span></p>
-                            
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="images/sunset.png" alt="sunset" width="60" height="auto" style="padding: 10px">
-                        <div>
-                            <p class="sunset"><span id="sunset"></span></p>                          
-                        </div>
-                    </div>
-                </div>                
+        </div>
+
+        <div class="right">
+            
+            
+            <h3 class="pad_top_40px weatherDetails">Weather Details...</h3>
+            
+            <div class="info">
+                <div class="pad_top_40px des"><span id="description"></span></div>
+                <div class="pad_top_40px "><span >Temp-max</span><div><span id="tempmax"></span><img src="icons/temp-high.png" alt=""></div></div>
+                <div class="pad_top_30px "><span>Temp-min</span><div><span id="tempmin"></span><img src="icons/temp-low.png" alt=""></div></div>
+                <div class="pad_top_30px "><span>Humidity </span><div><span id="humidity"></span><img src="icons/humidity.png" alt=""></div></div>
+                <div class="pad_top_30px "><span>Cloudy </span><div><span id="cloudcover"></span><img src="icons/clouds.png" alt=""></div></div>
+                <div class="pad_top_30px "><span>Wind </span><div><span id="windspeed"></span><img src="icons/wind.png" alt=""></div></div>
             </div>
 
-            <div class="outer-weather-container">
-                <div class="Daily-forecast">
-                    <div class="heading"><h3>DAILY WEATHER FORECAST</h3></div class="heading">               
-                    <div class="daily-forecast-container">
+            <div class="line"></div>
 
-                    
+            <div class="sun">
+                <div class="sunrise">
+                    <div><img src="icons/sunrise.png" alt=""></div>
+                    <div>
+                        <p>Sunrise</p>
+                        <p id="sunrise"></p>
+                    </div>
+                </div>
+                <div class="sunset">
+                    <div><img src="icons/sunset.png" alt=""></div>
+                    <div>
+                        <p>Sunset</p>
+                        <p id="sunset"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dailyForecast">
+                <div class="pad_top_40px heading"><h3>Daily Weather Forecast</h3></div>    
+                <div class="box-container" id="box-container">
                     <div class="col">
                         <div class="inside-col">
-                            <p>Today</p>
-                        </div><div class="inside-col">
-                            <img src="images/humidity-1.png" alt="humidity"  width="40" height="auto">
-                            <span id="humidity-0"></span>
+                            <p id="day-0"></p>
                         </div>
                         <div class="inside-col">
                             <img id="main-icon-0" src="images/sun.png" width="40" height="auto">
                         </div>
-                        <div class="inside-col">
-                            <span id="max-temp-0"></span>/
-                            <span id="min-temp-0"></span>
-                        </div> 
-                    </div>
-                    <div class="col">
-                        <div class="inside-col">
-                            <p><span id="day-1"></span></p>
-                        </div><div class="inside-col">
-                            <img src="images/humidity-1.png" alt="humidity"  width="40" height="auto">
-                            <span id="humidity-1"></span>
+                        <div>
+                            <p><span id="temp-0"></span></p>
                         </div>
-                        <div class="inside-col">
-                            <img id="main-icon-1" src="images/sun.png" width="40" height="auto">
-                        </div>
-                        <div class="inside-col">
-                            <span id="max-temp-1"></span>/
-                            <span id="min-temp-1"></span>
-                        </div> 
-                    </div>
-                    <div class="col">
-                        <div class="inside-col">
-                            <p><span id="day-2"></span></p>
-                        </div><div class="inside-col">
-                            <img src="images/humidity-1.png" alt="humidity"  width="40" height="auto">
-                            <span id="humidity-2"></span>
-                        </div>
-                        <div class="inside-col">
-                            <img id="main-icon-2" src="images/sun.png" width="40" height="auto">
-                        </div>
-                        <div class="inside-col">
-                            <span id="max-temp-2"></span>/
-                            <span id="min-temp-2"></span>
-                        </div> 
-                    </div>
-                    <div class="col">
-                        <div class="inside-col">
-                            <p><span id="day-3"></span></p>
-                        </div><div class="inside-col">
-                            <img src="images/humidity-1.png" alt="humidity"  width="40" height="auto">
-                            <span id="humidity-3"></span>
-                        </div>
-                        <div class="inside-col">
-                            <img id="main-icon-3" src="images/sun.png" width="40" height="auto">
-                        </div>
-                        <div class="inside-col">
-                            <span id="max-temp-3"></span>/
-                            <span id="min-temp-3"></span>
-                        </div> 
-                    </div>
-                    <div class="col">
-                        <div class="inside-col">
-                            <p><span id="day-4"></span></p>
-                        </div><div class="inside-col">
-                            <img src="images/humidity-1.png" alt="humidity"  width="40" height="auto">
-                            <span id="humidity-4"></span>
-                        </div>
-                        <div class="inside-col">
-                            <img id="main-icon-4" src="images/sun.png" width="40" height="auto">
-                        </div>
-                        <div class="inside-col">
-                            <span id="max-temp-4"></span>/
-                            <span id="min-temp-4"></span>
-                        </div> 
                     </div>
                     
-                    </div>
-                </div>
+                </div>           
             </div>
         </div>
+
+
     </div>
+            
+<!--            <div class="graph-container">
+                    <canvas id="weatherGraph"></canvas>
+                </div>
+             -->
 
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
 
-    <script src="index.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    
+
+
+    <script src="index2.js"></script>
 </body>
 </html>
