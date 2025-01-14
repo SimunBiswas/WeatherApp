@@ -147,14 +147,16 @@ async function getWeather(city) {
             if (i === hours) {
                 document.getElementById("temp").innerHTML = convertFtoCelciusvalue(time[i].temp) + "°";
                 document.getElementById("main-icon").src = chooseIcon(time[i].icon);
+                console.log(time[i].icon)
                 document.getElementById("feels-like").innerHTML = " " + convertFtoCelciusvalue(time[i].feelslike) + "°";
+                document.body.style.backgroundImage = `url(${chooseBg(time[i].icon)})`
+
             }
         }
 
 
         const { tempmin, tempmax, humidity, sunset, sunrise, windspeed, icon, description, cloudcover } = data.days[0];
 
-        document.body.style.backgroundImage = `url(${chooseBg(icon)})`
 
 
         const max_tempC = convertFtoCelciusvalue(tempmax);
